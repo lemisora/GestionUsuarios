@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { PerfilComponent } from './perfil/perfil.component';
-import { EstructurasComponent } from './estructuras/estructuras.component';
-import { DocumentacionComponent } from './documentacion/documentacion.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { HomeComponent } from "./home/home.component";
+import { PerfilComponent } from "./perfil/perfil.component";
+import { EstructurasComponent } from "./estructuras/estructuras.component";
+import { DocumentacionComponent } from "./documentacion/documentacion.component";
+import { UsuariosComponent } from "./usuarios/usuarios.component";
+import { PagesRoutingModule } from "./pages-routing.module";
 
 @NgModule({
   declarations: [
@@ -14,10 +13,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     PerfilComponent,
     EstructurasComponent,
     DocumentacionComponent,
-    UsuariosComponent
+    UsuariosComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, PagesRoutingModule],
 })
-export class PagesModule { }
+export class PagesModule {}
