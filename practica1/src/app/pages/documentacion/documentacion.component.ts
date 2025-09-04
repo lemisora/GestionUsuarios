@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-documentacion',
-  templateUrl: './documentacion.component.html',
-  styleUrls: ['./documentacion.component.scss']
+  selector: "app-documentacion",
+  templateUrl: "./documentacion.component.html",
+  styleUrls: ["./documentacion.component.scss"],
+  standalone: false,
 })
-export class DocumentacionComponent {
-
-}
+export class DocumentacionComponent {}
