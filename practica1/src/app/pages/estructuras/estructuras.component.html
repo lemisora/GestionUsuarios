@@ -1,1 +1,87 @@
 <p>estructuras works!</p>
+
+<div class="p-6 space-y-8">
+  <!-- ================== ngIf ================== -->
+  <section class="p-4 border rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-2">🔹 Ejemplo de <code>*ngIf</code></h2>
+    <p class="mb-4">
+      Con <code>*ngIf</code> podemos mostrar u ocultar elementos del DOM en función de una condición.
+    </p>
+
+    <button
+      class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+      (click)="mostrar = !mostrar">
+      {{ mostrar ? 'Ocultar' : 'Mostrar' }} mensaje
+    </button>
+
+    <div class="mt-4">
+      <p *ngIf="mostrar" class="p-2 bg-green-100 rounded">
+        ✅ ¡El mensaje está visible porque la condición es <b>true</b>!
+      </p>
+      <p *ngIf="!mostrar" class="p-2 bg-red-100 rounded">
+        ❌ El mensaje está oculto porque la condición es <b>false</b>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================== ngFor ================== -->
+  <section class="p-4 border rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-2">🔹 Ejemplo de <code>*ngFor</code></h2>
+    <p class="mb-4">
+      Con <code>*ngFor</code> podemos recorrer listas y renderizar elementos dinámicamente.
+    </p>
+
+    <div class="flex gap-2 mb-4">
+      <button
+        class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+        (click)="agregarItem()">
+        ➕ Agregar
+      </button>
+      <button
+        class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        (click)="removerItem()"
+        [disabled]="items.length === 0">
+        ➖ Quitar
+      </button>
+    </div>
+
+    <ul class="list-disc pl-6 space-y-1">
+      <li *ngFor="let item of items; let i = index">
+        {{ i + 1 }}. {{ item }}
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================== ngSwitch ================== -->
+  <section class="p-4 border rounded-xl shadow">
+    <h2 class="text-xl font-bold mb-2">🔹 Ejemplo de <code>[ngSwitch]</code></h2>
+    <p class="mb-4">
+      Con <code>[ngSwitch]</code> podemos mostrar un único elemento dependiendo de un valor.
+    </p>
+
+    <div class="flex gap-2 mb-4">
+      <button
+        class="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+        (click)="vista = 'lista'">
+        📜 Lista
+      </button>
+      <button
+        class="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+        (click)="vista = 'detalle'">
+        📄 Detalle
+      </button>
+      <button
+        class="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600"
+        (click)="vista = 'tabla'">
+        📊 Tabla
+      </button>
+    </div>
+
+    <div [ngSwitch]="vista" class="p-3 border rounded bg-gray-50">
+      <p *ngSwitchCase="'lista'">📜 Estás viendo la <b>lista</b> de elementos.</p>
+      <p *ngSwitchCase="'detalle'">📄 Estás viendo el <b>detalle</b> de un elemento.</p>
+      <p *ngSwitchCase="'tabla'">📊 Estás viendo los datos en formato <b>tabla</b>.</p>
+      <p *ngSwitchDefault>⚠️ Selecciona una opción para mostrar contenido.</p>
+    </div>
+  </section>
+</div>
