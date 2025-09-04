@@ -1,1 +1,23 @@
-<p>documentacion works!</p>
+
+<div class="documentacion-container">
+  <!-- Enlace a la documentación oficial de Ionic -->
+  <h2>Documentación</h2>
+  <p>
+    Consulta la documentación oficial de
+    <a href="https://ionicframework.com/docs" target="_blank" rel="noopener noreferrer">
+      Ionic Framework
+    </a>.
+  </p>
+
+  <!-- Carrusel -->
+  <div class="carousel">
+    <button (click)="anterior()" class="btn">&lt;</button>
+
+    <div class="carousel-item" (click)="abrir(tecnologias[index].url)">
+      <img [src]="tecnologias[index].img" [alt]="tecnologias[index].nombre" />
+      <p>{{ tecnologias[index].nombre }}</p>
+    </div>
+
+    <button (click)="siguiente()" class="btn">&gt;</button>
+  </div>
+</div>
