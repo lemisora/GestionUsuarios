@@ -1,0 +1,65 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-content">
+      <div class="navbar-brand-section">
+        <div class="brand-container">
+          <h1 class="brand-title">Gestión Usuarios</h1>
+        </div>
+        <div class="desktop-menu">
+          <a
+            *ngFor="let element of elements"
+            [routerLink]="element.link"
+            routerLinkActive="nav-link-active"
+            class="nav-link"
+          >
+            {{ element.title }}
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="mobile-menu-button-container">
+        <button
+          type="button"
+          (click)="toggleMobileMenu()"
+          class="mobile-menu-button"
+          [attr.aria-expanded]="isMobileMenuOpen"
+        >
+          <svg class="menu-icon" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path
+              [ngClass]="{'hidden': isMobileMenuOpen, 'flex': !isMobileMenuOpen}"
+              class="hamburger-icon"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            <path
+              [ngClass]="{'hidden': !isMobileMenuOpen, 'flex': isMobileMenuOpen}"
+              class="close-icon"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" [ngClass]="{'block': isMobileMenuOpen, 'hidden': !isMobileMenuOpen}">
+    <div class="mobile-menu-content">
+      <a
+        *ngFor="let element of elements"
+        [routerLink]="element.link"
+        routerLinkActive="mobile-nav-link-active"
+        class="mobile-nav-link"
+        (click)="closeMobileMenu()"
+      >
+        {{ element.title }}
+      </a>
+    </div>
+  </div>
+</nav>
