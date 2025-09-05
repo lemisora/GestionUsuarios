@@ -7,6 +7,7 @@ import { EstructurasComponent } from "./estructuras/estructuras.component";
 import { DocumentacionComponent } from "./documentacion/documentacion.component";
 import { UsuariosComponent } from "./usuarios/usuarios.component";
 import { PagesRoutingModule } from "./pages-routing.module";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { PagesRoutingModule } from "./pages-routing.module";
     DocumentacionComponent,
     UsuariosComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule, RouterModule],
+  imports: [CommonModule, PagesRoutingModule, RouterModule, SharedModule],
 })
 export class PagesModule {}
