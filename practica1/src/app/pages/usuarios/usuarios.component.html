@@ -1,1 +1,35 @@
 <p>usuarios works!</p>
+
+<div class="max-w-6xl mx-auto p-6">
+  <h2 class="text-2xl font-bold mb-4">Usuarios</h2>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="p-3 mb-4 text-blue-800 bg-blue-100 border border-blue-300 rounded">
+    Cargando...
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error" class="p-3 mb-4 text-red-800 bg-red-100 border border-red-300 rounded">
+    {{ error }}
+  </div>
+
+  <!-- Lista de usuarios -->
+  <div *ngIf="!loading && users?.length">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div *ngFor="let u of users; trackBy: trackById"
+           class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
+        <h5 class="text-lg font-semibold mb-2">{{ u.name }}</h5>
+        <p class="text-gray-700"><span class="font-medium">Email:</span> {{ u.email }}</p>
+        <p class="text-gray-700"><span class="font-medium">Tel:</span> {{ u.phone }}</p>
+        <p class="text-gray-700"><span class="font-medium">Web:</span> {{ u.website }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- No hay usuarios -->
+  <div *ngIf="!loading && !users.length"
+       class="p-3 mt-4 text-yellow-800 bg-yellow-100 border border-yellow-300 rounded">
+    NO HAY USUARIOS
+  </div>
+</div>
+
