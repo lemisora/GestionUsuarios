@@ -1,0 +1,45 @@
+.documentacion-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  font-family: Arial, sans-serif;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-item img {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.btn {
+  background-color: #1976d2;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #0d47a1;
+}

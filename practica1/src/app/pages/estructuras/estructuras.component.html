@@ -1,0 +1,43 @@
+
+<div class="max-w-6xl mx-auto p-6">
+  <h2 class="text-xl font-bold mb-4">Estructuras de control</h2>
+
+  <!-- ngIf -->
+  <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+          (click)="showInfo = !showInfo">
+     Mostrar/Ocultar información
+   </button>
+   <div class="mt-4" *ngIf="showInfo, else noInfopl">
+    <p>Mostrando información: ejemplo de *ngIf*</p>
+   </div>
+   <ng-template #noInfopl>
+    <p class="mt-4 font-bold">Información Oculta</p>
+   </ng-template>
+
+   <hr class="m-4">
+
+   <!-- ngFor -->
+    <h4>Lista de estudiantes (ngFor)</h4>
+    <ul>
+      <li *ngFor="let s of students; index as i">
+        {{ i + 1 }} - {{ s.name }}, con edad {{ s.edad }}
+      </li>
+    </ul>
+
+    <hr class="m-4">
+
+    <!-- ngSwitch -->
+     <h4>Ejemplo ngSwitch</h4>
+     <select [value]="role" (change)="role = $any($event.target).value" class="form-select">
+      <option value="admin"><strong>Admin</strong></option>
+      <option value="editor"><strong>Editor</strong></option>
+      <option value="viewer"><strong>Viewer</strong></option>
+     </select>
+
+     <div [ngSwitch]="role">
+      <div *ngSwitchCase="'admin'"><strong>Administración completa</strong></div>
+      <div *ngSwitchCase="'editor'"><strong>Puede editar contenido</strong></div>
+      <div *ngSwitchCase="'viewer'"><strong>Solo visualización</strong></div>
+      <div *ngSwitchDefault><em>Seleccione un rol para ver permisos</em></div>
+     </div>
+</div>

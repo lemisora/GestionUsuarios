@@ -56,8 +56,8 @@ in
     };
     "project:setup-dev" = {
       exec = ''
-        echo "→ Instalando @angular/cli@16.2.11 y @ionic/cli localmente (devDependencies)..."
-        npm install --no-audit --no-fund --save-dev @angular/cli@16.2.11 @ionic/cli
+        echo "→ Instalando @angular/cli@16.2.11 localmente (devDependencies)..."
+        npm install --no-audit --no-fund --save-dev @angular/cli@16.2.11
         echo "✅ Herramientas instaladas en node_modules/.bin"
       '';
     };
@@ -77,13 +77,6 @@ in
       echo "⚠️ Angular CLI no instalado. Ejecuta: devenv tasks run project:setup-dev"
     fi
 
-    if command -v ionic >/dev/null; then
-      echo "✅ Ionic CLI detectado: $(ionic --version)"
-    else
-      echo "⚠️ Ionic CLI no instalado. Ejecuta: devenv run project:setup-dev"
-    fi
-
-    echo "Para iniciar el servidor en background: devenv up ionic-dev"
     echo "Para detener todos los procesos: devenv down"
     echo "Para limpiar (npm): devenv tasks run project:clean"
   '';
