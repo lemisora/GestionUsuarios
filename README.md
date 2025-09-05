@@ -10,6 +10,7 @@
   - Se instalan todas las dependencias de desarrollo con `devenv tasks run project:setup-dev`.
   ### Node
   - Para este proyecto se usa Node 18+, el entorno de desarrollo de devenv ya lo tiene instalado. Se recomienda usar el devenv. Si no las dependencias deberás instalarlas manualmente.
+  - La versión de NPM es la 10.2+
   ### Angular
   - Se necesita Angular 16+ para este proyecto, en el devenv se puede instalar fácilmente, sino instalarlo manualmente.
   ### Tailwind
