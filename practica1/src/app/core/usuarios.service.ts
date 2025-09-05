@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { catchError } from "rxjs/operators";
 
 export interface User {
   id: number;
@@ -15,20 +15,21 @@ export interface User {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class UsuariosService {
+  private readonly API_URL = "https://jsonplaceholder.typicode.com/users";
 
-  private readonly API_URL = 'https://jsonplaceholder.typicode.com/users';
-
-  constructor( private http: HttpClient ) {}
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.API_URL).pipe(
-      catchError(err => {
-        console.error('Error fetching users:', err);
-        return throwError( () => new Error('No se pudieron cargar los usuarios') );
-      })
+      catchError((err) => {
+        console.error("Error fetching users:", err);
+        return throwError(
+          () => new Error("No se pudieron cargar los usuarios"),
+        );
+      }),
     );
   }
 }
