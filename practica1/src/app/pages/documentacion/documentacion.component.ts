@@ -17,17 +17,17 @@ export class DocumentacionComponent {
     {
       nombre: "NodeJS",
       img: "assets/img/nodejs.png",
-      url: "https://nodejs.org/",
+      url: "https://nodejs.org/docs/latest/api/",
     },
     {
       nombre: "TypeScript",
       img: "assets/img/typescript.png",
-      url: "https://www.typescriptlang.org/",
+      url: "https://www.typescriptlang.org/docs/",
     },
     {
       nombre: "Angular",
       img: "assets/img/angular.png",
-      url: "https://angular.io",
+      url: "https://angular.dev/overview",
     },
     {
       nombre: "Ionic",
@@ -37,7 +37,12 @@ export class DocumentacionComponent {
     {
       nombre: "NPM",
       img: "assets/img/npm.png",
-      url: "https://www.npmjs.com/",
+      url: "https://docs.npmjs.com/",
+    },
+    {
+      nombre: "Tailwind CSS",
+      img: "assets/img/tailwindcss.png",
+      url: "https://tailwindcss.com/docs/installation/framework-guides/angular",
     },
   ];
 
