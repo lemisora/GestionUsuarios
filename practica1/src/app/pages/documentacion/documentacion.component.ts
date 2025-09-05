@@ -15,43 +15,44 @@ interface Tecnologia {
 export class DocumentacionComponent {
   tecnologias: Tecnologia[] = [
     {
-      nombre: 'NodeJS',
-      img: 'assets/img/nodejs.png',
-      url: 'https://nodejs.org/'
+      nombre: "NodeJS",
+      img: "assets/img/nodejs.png",
+      url: "https://nodejs.org/",
     },
     {
-      nombre: 'TypeScript',
-      img: 'assets/img/typescript.png',
-      url: 'https://www.typescriptlang.org/'
+      nombre: "TypeScript",
+      img: "assets/img/typescript.png",
+      url: "https://www.typescriptlang.org/",
     },
     {
-      nombre: 'Angular',
-      img: 'assets/img/angular.png',
-      url: 'https://angular.io'
+      nombre: "Angular",
+      img: "assets/img/angular.png",
+      url: "https://angular.io",
     },
     {
-      nombre: 'Ionic',
-      img: 'assets/img/ionic.png',
-      url: 'https://ionicframework.com/docs'
+      nombre: "Ionic",
+      img: "assets/img/ionic.png",
+      url: "https://ionicframework.com/docs",
     },
     {
-      nombre: 'NPM',
-      img: 'assets/img/npm.png',
-      url: 'https://www.npm.com/'
-    }
+      nombre: "NPM",
+      img: "assets/img/npm.png",
+      url: "https://www.npmjs.com/",
+    },
   ];
 
   index = 0;
 
-  siguiente(){
+  siguiente() {
     this.index = (this.index + 1) % this.tecnologias.length;
   }
 
-  anterior(){
-    this.index = (this.index - 1 + this.tecnologias.length)  % this.tecnologias.length;
+  anterior() {
+    this.index =
+      (this.index - 1 + this.tecnologias.length) % this.tecnologias.length;
   }
 
-  abrir(url: string){
-    window.open(url, '_blank');
+  abrir(url: string) {
+    window.open(url, "_blank");
   }
 }
