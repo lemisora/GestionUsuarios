@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { PerfilComponent } from "./perfil/perfil.component";
 import { EstructurasComponent } from "./estructuras/estructuras.component";
@@ -15,6 +16,6 @@ import { PagesRoutingModule } from "./pages-routing.module";
     DocumentacionComponent,
     UsuariosComponent,
   ],
-  imports: [CommonModule, PagesRoutingModule],
+  imports: [CommonModule, PagesRoutingModule, RouterModule],
 })
 export class PagesModule {}
